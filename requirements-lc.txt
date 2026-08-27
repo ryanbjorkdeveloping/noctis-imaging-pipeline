@@ -1,0 +1,26 @@
+# ALeRCE light-curve classifier environment (.venv_lc) — Python 3.11, ISOLATED.
+# OPTIONAL: only needed for lc_testing/ (Stage-4 Phase B). Nothing else imports it.
+#
+#   python3.11 -m venv .venv_lc
+#   .venv_lc/bin/pip install -r requirements-lc.txt
+#   .venv_lc/bin/pip install -e lc_classifier/ --no-deps   # after bootstrap_models.sh
+#
+# WHY A SEPARATE VENV: lc_classifier hard-pins scikit-learn<=1.2.2 (main venv has
+# 1.9.0) and its model pickles require NumPy 1.x. Installing it into the main venv
+# breaks braai, the stamp classifier and astropy.
+#
+# NOTE ON PROVENANCE: unlike the other two files, these pins are the documented
+# working set rather than a fresh `pip freeze` — the author's .venv_lc is no longer
+# intact to re-freeze. Treat as known-good-but-unverified; the default install
+# resolves numpy 2 + jax 0.10 and conflicts, so pin the whole NumPy-1 world.
+# Re-run the `pip install -e lc_classifier/` step after any numpy change.
+
+numpy==1.26.4
+scikit-learn==1.2.2
+jax==0.4.20
+jaxlib==0.4.20
+pandas==1.5.3
+astropy==5.3.4
+scipy==1.12
+numba==0.59.1
+alerce

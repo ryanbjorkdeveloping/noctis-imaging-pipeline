@@ -1,0 +1,21 @@
+# DeepStreaks environment (.venv_streaks) — Python 3.11, ISOLATED from the main venv.
+#
+#   python3.11 -m venv .venv_streaks
+#   .venv_streaks/bin/pip install -r requirements-streaks.txt
+#
+# WHY A SEPARATE VENV: the 9 pretrained DeepStreaks models were serialized with
+# Keras 2.2.4 and will not load under Keras 3, which the main venv needs for braai.
+# TF 2.15 is the last Keras-2 line with arm64/py3.11 wheels (<=2.13 has none;
+# >=2.16 bundles Keras 3). The two environments genuinely cannot be merged.
+#
+# ztf_classification/pipeline.py drives this interpreter as a subprocess at
+# PROJECT_ROOT/.venv_streaks/bin/python — keep the directory name.
+
+tensorflow==2.15.1
+keras==2.15.0
+numpy==1.26.4
+h5py==3.16.0
+astropy==7.2.2
+scikit-image==0.26.0
+pillow==12.3.0
+matplotlib==3.11.1

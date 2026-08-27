@@ -1,0 +1,4 @@
+from close_up_object_detection.detect_asteroid_features import DetectAsteroidFeatures, process_image
+from close_up_object_detection.detect_comet_features import DetectCometFeatures, process_image
+from close_up_object_detection.detect_planet_features import DetectPlanetFeatures, process_image
+from close_up_object_detection.detect_star_features import DetectStarFeatures, process_image

@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+dist/
+build/
+
+# Virtual environments (three of them — see README: Keras version walls)
+.venv/
+.venv_streaks/
+.venv_lc/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment variables — .env holds your local ZTFDATA path
+.env
+.env.*
+!.env.example
+
+# ZTF survey data: downloaded FITS + everything the pipeline derives from them.
+# Point $ZTFDATA wherever you like; this rule covers the in-repo default.
+ztfdata/
+
+# Vendored pretrained models — cloned by scripts/bootstrap_models.sh, not committed.
+# Each keeps its own upstream .git and MIT LICENSE; see README > Attribution.
+braai/
+DeepStreaks/
+lc_classifier/
+stamp_classifier_model/
+
+# Exporter output (rebuild from your own survey.db)
+exporters/data/
+
+# Run logs
+*.log
+
+# Model weights
+*.pt
+*.pth
+*.onnx
+*.torchscript
+
+# OpenCV close-up track: user-supplied images + YOLO run output
+input_images/
+output_images/
+runs/
+
+# OS / IDE
+.DS_Store
+**/.DS_Store
+.vscode/
+.idea/
